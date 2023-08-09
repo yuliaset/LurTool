@@ -82,7 +82,7 @@ class LurDecompiler():
         f = open(id, "r+b")    
         mm = mmap.mmap(f.fileno(), 0)
         mm[pos] = val
-        return mm[pos]
+        return mm
 
 Lur = LurDecompiler
 print(Lur.identify_functions(fname))
