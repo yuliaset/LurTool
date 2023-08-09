@@ -78,5 +78,11 @@ class LurDecompiler():
                     res.append(byte)
         return res
 
+    def edit_byte(id, pos, val):
+        f = open(id, "r+b")    
+        mm = mmap.mmap(f.fileno(), 0)
+        mm[pos] = val
+        return mm[pos]
+
 Lur = LurDecompiler
 print(Lur.identify_functions(fname))
